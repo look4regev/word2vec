@@ -6,6 +6,6 @@ cache:
   directories:
     - $HOME/buildout-cache
 install:
-  - pip install -r requirements.txt
+  - pip install -r requirements.txt -U -r inner_requirements.txt
 script:
   - find . -name "*.py" | xargs pylint --reports=n
