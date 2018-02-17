@@ -1,1 +1,1 @@
--e git+ssh://git@github.com:look4regev/neural_network_trainer.git@master#egg=nn_tools
+-e git+ssh://git@github.com/look4regev/neural_network_trainer.git@master#egg=nn_tools
