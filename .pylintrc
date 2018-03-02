@@ -14,7 +14,7 @@ disable=missing-docstring,too-few-public-methods
 [BASIC]
 
 # Good variable names which should always be accepted, separated by a comma
-good-names=i,j,k,X,x,y
+good-names=i,j,k,X,x,y,logger
 
 [DESIGN]
 

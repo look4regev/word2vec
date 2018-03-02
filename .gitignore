@@ -7,3 +7,5 @@
 
 .DS_Store
 .idea
+
+corpus/training-monolingual.tokenized.shuffled/
