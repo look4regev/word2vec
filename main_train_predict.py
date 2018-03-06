@@ -10,13 +10,15 @@ from tools.words_vectors import find_closest
 from tools.corpus_manipulator import get_curpos_sentences, get_curpos_words
 
 
-HIDDEN_LAYER_SIZE = 10
+HIDDEN_LAYER_SIZE_FULL = 300
+HIDDEN_LAYER_SIZE_SANITY = 10
+HIDDEN_LAYER_SIZE = HIDDEN_LAYER_SIZE_SANITY
 ITERATIONS = 1
 L2_REGULARIZATION = 0.1
 
-# TRAINING_SET_FULL_PATHS = glob(join('corpus', 'training-monolingual.tokenized.shuffled', '*.txt'))
-# TRAINING_SET_MIN_PATHS = glob(join('corpus', 'training-monolingual.tokenized.shuffled',
-#                                    'news.en-00001*'))
+TRAINING_SET_FULL_PATHS = glob(join('corpus', 'training-monolingual.tokenized.shuffled', '*.txt'))
+TRAINING_SET_MIN_PATHS = glob(join('corpus', 'training-monolingual.tokenized.shuffled',
+                                   'news.en-00001*'))
 TRAINING_SET_SANITY_TEST_PATHS = glob(join('corpus', 'training_sample.txt'))
 TRAINING_SET_PATHS = TRAINING_SET_SANITY_TEST_PATHS
 WINDOW_SIZE = 2
@@ -80,7 +82,8 @@ def main():
     logger.info('Done training. Starting prediction on test set')
 
     vocabulary_vectors = {word: neural_network.predict(word_to_one_hot_vector[word],
-                                                       return_winning_class=False)
+                                                       return_winning_class=False,
+                                                       return_hidden_layer=True)
                           for word in curpos_words}
     logger.info('Done prediction. Finding closest words to all vectors')
 
