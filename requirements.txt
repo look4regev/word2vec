@@ -1,4 +1,8 @@
+pip>=9.0.1,<9.1
 numpy==1.14.0
 pylint==1.8.1
 matplotlib==2.1.1
 stop-words
+scikit-learn==0.19.1
+tensorflow==1.6.0
+jupyter==1.0.0
